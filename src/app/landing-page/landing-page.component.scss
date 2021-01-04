@@ -1,0 +1,78 @@
+ a {
+   text-decoration: none;
+   color: black;
+ }
+
+ header {
+   height: 45px;
+   display: flex;
+   justify-content: space-evenly;
+
+   a {
+     display: flex;
+     align-items: center;
+
+     img {
+       height: 100%;
+     }
+   }
+ }
+
+ .first-view {
+   height: calc(100vh - 45px);
+   width: 100%;
+   background-image: url("../../assets/img/beer-tasting.jpg");
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-size: cover;
+   background-position: center;
+
+   a {
+     display: grid;
+     justify-items: center;
+     text-shadow: 0 0 15px white;
+   }
+ }
+
+ .description-section {
+   height: 60vh;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+
+   &>div {
+     display: grid;
+     align-items: center;
+   }
+
+   .image {
+     height: 100%;
+     width: 100%;
+     background-position: center;
+     background-attachment: fixed;
+     background-size: cover;
+   }
+
+   &#why {
+     .why-img {
+       background-image: url("../../assets/img/hopfen.jpg");
+     }
+   }
+
+   &.what {
+     .what-img {
+       background-image: url("../../assets/img/black-bottles.jpg");
+     }
+   }
+ }
+
+ footer {
+   width: 100%;
+   background-color: darkgray;
+   display: flex;
+   justify-content: space-around;
+
+   button.mat-button {
+     color: white;
+   }
+ }

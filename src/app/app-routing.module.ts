@@ -8,11 +8,12 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
   {path: 'beer-selection', component: BeerSelectionComponent},
-  {path: 'new-beer', component: UploadNewBeerComponent}
+  {path: 'new-beer', component: UploadNewBeerComponent},
+  {path: '*', redirectTo: '/'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {anchorScrolling: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

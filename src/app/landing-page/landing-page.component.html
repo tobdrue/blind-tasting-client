@@ -1,16 +1,36 @@
+<header>
+  <a routerLink="/"><img src="assets/blind-tasting-logo.png"></a>
+  <a routerLink="beer-selection">Tasting bestellen</a>
+</header>
 <div class="first-view">
-  <h1>Bier neu erleben.</h1>
+  <a href="./" fragment="why">
+    <h1>Bier neu erleben.</h1>
+    <mat-icon>arrow_downwards</mat-icon>
+  </a>
 </div>
-<div class="why">
-  <button mat-raised-button></button>
+<div id="why" class="description-section">
+  <div class="why-img image"></div>
+  <div>
+    Bier trinken ist etwas schönes!<br>
+    Noch besser ist es sich dabei voll und ganz unvoreingenommen auf den Geschmack zu konzentrieren. 
+  <button mat-raised-button routerLink="beer-selection"></button>
+  </div>
 </div>
-<div class="what">
-
-  <button mat-raised-button>Pro<strong>bier</strong> es!</button>
+<div class="what description-section">
+  <div>
+    Was erwartet dich:
+    <ul>
+      <li>neues Geschmackserlebnis</li>
+      <li>als Gruppe oder allein</li>
+      <li>spaß für die ganze Familie</li>
+    </ul>
+  <button mat-raised-button routerLink="beer-selection">Pro<strong>bier</strong> es!</button>
+  </div>
+  <div class="what-img image"></div>
 </div>
-<div class="footer">
-  <button disabled>Impressum</button>
-  <button disabled>Datenschutz</button>
-  <button disabled>AGB</button>
-  <button disabled>FAQ</button>
-</div>
+<footer>
+  <button mat-button disabled>Impressum</button>
+  <button mat-button disabled>Datenschutz</button>
+  <button mat-button disabled>AGB</button>
+  <button mat-button disabled>FAQ</button>
+</footer>
