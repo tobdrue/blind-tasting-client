@@ -1,11 +1,19 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {BeerSelectionComponent} from './beer-selection/beer-selection.component';
+import {UploadNewBeerComponent} from './upload-new-beer/upload-new-beer.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', component: LandingPageComponent},
+  {path: 'beer-selection', component: BeerSelectionComponent},
+  {path: 'new-beer', component: UploadNewBeerComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

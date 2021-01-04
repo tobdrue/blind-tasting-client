@@ -1,0 +1,13 @@
+<button mat-stroked-button
+        [ngStyle]="{'background-image': 'url(' + (beerIconSrc | async)  + ')'}"
+        [class.selected]="beerSelected"
+        (click)="beerClicked()"
+        matBadge="✓" matBadgePosition="after"
+        matBadgeColor="accent"
+        [matBadgeHidden]="!beerSelected"
+        matBadgeSize="large">
+  <div class="container">
+    <div>{{beer.brewery}}</div>
+    <div>{{beer.name}}</div>
+  </div>
+</button>

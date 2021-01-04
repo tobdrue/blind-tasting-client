@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "blind-tasting"
+  },
+  "targets": {
+    "blind-tasting": {
+      "hosting": {
+        "blind-tasting-client": [
+          "blind-tasting-client"
+        ]
+      }
+    }
+  }
+}

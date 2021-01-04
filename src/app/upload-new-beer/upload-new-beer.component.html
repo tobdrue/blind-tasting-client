@@ -1,0 +1,50 @@
+<form [formGroup]="beerFormGroup">
+  <mat-form-field class="user-input">
+    <input matInput placeholder="name" formControlName="name" required>
+  </mat-form-field>
+  <mat-form-field class="user-input">
+    <input matInput placeholder="brewery" formControlName="brewery" required>
+  </mat-form-field>
+  <mat-form-field class="user-input">
+    <input matInput placeholder="slogan" formControlName="slogan" required>
+  </mat-form-field>
+  <mat-form-field class="user-input">
+    <textarea matInput placeholder="description" formControlName="description" required></textarea>
+  </mat-form-field>
+  <mat-form-field class="user-input">
+    <textarea matInput placeholder="hints" formControlName="hints" required></textarea>
+  </mat-form-field>
+  <mat-form-field class="user-input">
+    <input matInput placeholder="alcohol" formControlName="alcohol" type="number" required>
+  </mat-form-field>
+  <mat-form-field class="user-input">
+    <input matInput placeholder="originalWort" formControlName="originalWort" type="number" required>
+  </mat-form-field>
+  <mat-form-field class="user-input">
+    <input matInput placeholder="beerType" formControlName="beerType" required>
+  </mat-form-field>
+  <mat-form-field class="user-input">
+    <input matInput placeholder="website" formControlName="website" required>
+  </mat-form-field>
+  <mat-form-field class="user-input">
+    <input matInput placeholder="ingredients" formControlName="ingredients" required>
+  </mat-form-field>
+</form>
+<div class="image-uploads">
+  <div>
+    BeerIcon
+    <file-upload class="file-upload"
+                 [maxImages]="1"
+                 [folderName]="brewery.toLowerCase().replace(' ','-').replace('ä','ae').replace('ü','ue')"
+                 (imageRefListChange)="beerIcon = $event"></file-upload>
+  </div>
+  <div>
+    BreweryIcon
+    <file-upload class="file-upload"
+                 [maxImages]="1"
+                 [folderName]="brewery.toLowerCase().replace(' ','-').replace('ä','ae').replace('ü','ue')"
+                 (imageRefListChange)="breweryIcon = $event"></file-upload>
+  </div>
+</div>
+
+<button mat-raised-button [disabled]="beerFormGroup.invalid" (click)="createBeer()">Create</button>

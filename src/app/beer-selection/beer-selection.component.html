@@ -1,0 +1,12 @@
+<div>
+  <client-beer-tile *ngFor="let beer of availableBeers | async"
+                    [beer]="beer"
+                    (beerToggled)="beerToggled($event)"></client-beer-tile>
+</div>
+<button mat-raised-button color="primary" (click)="createNewUser()" [disabled]="selectedBeers.length === 0">ADD USER</button>
+<div class="links">
+  <div *ngFor="let link of links">
+    <div>{{link.beerName}}:</div>
+    <a [href]="link.link">{{link.link}}</a>
+  </div>
+</div>

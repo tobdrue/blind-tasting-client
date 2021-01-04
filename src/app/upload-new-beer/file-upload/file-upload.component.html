@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="dropzone"
+       fileDrop
+       (filesDropped)="uploadFiles($event)"
+       (filesHovered)="dropzoneState($event)"
+       [ngClass]="{'active': dropzoneActive}"
+       (click)="addFiles()">
+    <mat-icon class="dropzone-upload-icon">cloud_upload</mat-icon>
+    <div class="upload-title">Upload Images</div>
+    <div>Click and select or let them drop here.</div>
+  </div>
+
+  <div class="uploads">
+    <div class="upload" *ngFor="let file of files">
+      <div class="uploaded-image upload-full-width" *ngIf="file.task.snapshot.state === 'success'">
+        <img *ngIf="file.src | async; let url" [src]="url" alt="uploaded image">
+      </div>
+
+      <div class="name upload-full-width">{{file.task.snapshot.ref.name}}</div>
+
+      <mat-progress-bar class="upload-full-width"
+                        [attr.aria-lable]="'test'"
+                        mode="determinate"
+                        [value]="file.uploadPercentage | async">
+      </mat-progress-bar>
+
+      <div class="upload-percentage">
+        {{file.uploadPercentage | async | number : "1.0-0"}}%
+      </div>
+
+      <div class="upload-actions">
+        <button mat-mini-fab *ngIf="file.task.snapshot.state === 'running'" (click)="file.task.pause()">
+          <mat-icon>pause</mat-icon>
+        </button>
+        <button mat-mini-fab *ngIf="file.task.snapshot.state === 'paused'" (click)="file.task.resume()">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+        <button mat-mini-fab (click)="deleteFile(file)">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<input type="file"
+       #file
+       style="display: none"
+       access=".png,.jpg"
+       (change)=" onFilesAdded()"
+       multiple/>
