@@ -4,7 +4,7 @@
  }
 
  header {
-   height: 45px;
+   height: 56px;
    display: flex;
    justify-content: space-evenly;
 
@@ -21,7 +21,7 @@
  .first-view {
    height: calc(100vh - 45px);
    width: 100%;
-   background-image: url("../../assets/img/beer-tasting.jpg");
+   background-image: url("../../assets/img/dreierpack-weihnachten.jpg");
    display: flex;
    justify-content: center;
    align-items: center;
@@ -35,11 +35,25 @@
    }
  }
 
- .description-section {
-   height: 60vh;
-   display: grid;
-   grid-template-columns: 1fr 1fr;
+.teaser {
+  height: 400px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  padding: 25px;
+  background-color: #2e2e2e;
+  color: white;
+  text-align: center;
+}
 
+ .description-section {
+   display: grid;
+   grid-template-rows: 200px auto;
+   @media screen and (min-width: 720px) {
+	height: 60vh;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+   }
    &>div {
      display: grid;
      align-items: center;
@@ -61,7 +75,7 @@
 
    &.what {
      .what-img {
-       background-image: url("../../assets/img/black-bottles.jpg");
+       background-image: url("../../assets/img/detailansicht-etikett.jpg");
      }
    }
  }
